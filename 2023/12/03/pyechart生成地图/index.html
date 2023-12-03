@@ -9,6 +9,8 @@
     
     <title>
         
+            pyechart生成地图 |
+        
         Yang的博客
     </title>
     
@@ -56,43 +58,14 @@
 
     <!-- home first screen  -->
     
-        
-<div class="first-screen-container border-box flex-center fade-in-down-animation">
-    <div class="first-screen-content border-box">
-        <div class="top-placeholder border-box"></div>
-
-        <div class="middle-placeholder border-box">
-            
-                <div class="description border-box">
-                    
-                        <div class="desc-item border-box"><span class="desc hitokoto"></span><span class="cursor">｜</span></div>
-                    
-                </div>
-            
-
-            
-                <script async data-pjax
-                        src="https://v1.hitokoto.cn/?encode=js"
-                >
-                </script>
-            
-        </div>
-
-        <div class="bottom-placeholder border-box">
-            
-        </div>
-    </div>
-</div>
-
-    
 
     <!-- page content -->
-    <div class="page-main-content border-box is-home">
+    <div class="page-main-content border-box">
         <div class="page-main-content-top">
             
-<header class="header-wrapper transparent-1">
+<header class="header-wrapper">
 
-    <div class="border-box header-content has-first-screen">
+    <div class="border-box header-content">
         <div class="left border-box">
             
                 <a class="logo-image border-box" href="/">
@@ -108,7 +81,7 @@
             <div class="pc">
                 <ul class="menu-list">
                     <li class="menu-item">
-                        <a class="active"
+                        <a class=""
                            href="/"
                         >首页</a>
                     </li>
@@ -152,7 +125,7 @@
     <div class="header-drawer">
         <ul class="drawer-menu-list">
             <li class="drawer-menu-item flex-center">
-                <a class="active"
+                <a class=""
                    href="/"
                 >首页</a>
             </li>
@@ -190,368 +163,153 @@
             <div class="main-content border-box">
                 
 
-                    <div class="home-content-container fade-in-down-animation">
-    
-    <ul class="home-post-list border-box">
-        
-            <li class="home-post-item">
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
 
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        pyechart生成地图
+                    </div>
                 
 
-                <div class="home-post-item-bottom border-box">
-                    
-                        <div class="post-sticky-box card">
-                            <i class="fas fa-thumbtack"></i><span class="sticky-name">&nbsp;置顶</span>
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">不凡</span>
+                                
+                                    <span class="author-badge">Lv1</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2023-12-03</span>
+                <span class="mobile">2023-12-03 13:48</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Sun Dec 03 2023 14:10:30 GMT+0800">2023-12-03</span>
+            </span>
+        
+
+        
+
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>168 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>1 分钟</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
                         </div>
-                    
-                    <h3 class="home-post-title border-box">
-                        <a href="/2023/12/03/8%E4%B8%AA%E5%B8%B8%E7%94%A8%E7%9A%84python%E5%8A%9E%E5%85%AC%E5%AE%A4%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E5%B7%A7/">
-                            8个常用的python办公室自动化技巧
-                        </a>
-                    </h3>
-
-                    <div class="home-post-content keep-markdown-body">
-                        
-                            word文件转换，经纬度计算，文件合并，word中数据提取，发送邮件等。
-                        
                     </div>
+                
 
+                <div class="post-content keep-markdown-body">
                     
 
-<div class="post-meta-info-container border-box home">
-    <div class="post-meta-info border-box">
-        
-            <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-post-history" data-updated="Sun Dec 03 2023 12:52:46 GMT+0800">2023-12-03 12:52:46</span>
-            </span>
-        
+                    <p>代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Geo</span><br><span class="line"><span class="keyword">from</span> pyecharts.<span class="built_in">globals</span> <span class="keyword">import</span> ChartType, SymbolType</span><br><span class="line"></span><br><span class="line">c = (</span><br><span class="line">    Geo()</span><br><span class="line">    .add_schema(</span><br><span class="line">        maptype=<span class="string">&quot;china&quot;</span>,</span><br><span class="line">        itemstyle_opts=opts.ItemStyleOpts(color=<span class="string">&quot;#323c48&quot;</span>, border_color=<span class="string">&quot;#111&quot;</span>),</span><br><span class="line">    )</span><br><span class="line">    .add(</span><br><span class="line">        <span class="string">&quot;&quot;</span>,</span><br><span class="line">        [(<span class="string">&quot;广州&quot;</span>, <span class="number">55</span>), (<span class="string">&quot;北京&quot;</span>, <span class="number">66</span>), (<span class="string">&quot;杭州&quot;</span>, <span class="number">77</span>), (<span class="string">&quot;重庆&quot;</span>, <span class="number">88</span>)],</span><br><span class="line">        type_=ChartType.EFFECT_SCATTER,</span><br><span class="line">        color=<span class="string">&quot;white&quot;</span>,</span><br><span class="line">    )</span><br><span class="line">    .add(</span><br><span class="line">        <span class="string">&quot;geo&quot;</span>,</span><br><span class="line">        [(<span class="string">&quot;广州&quot;</span>, <span class="string">&quot;上海&quot;</span>), (<span class="string">&quot;广州&quot;</span>, <span class="string">&quot;北京&quot;</span>), (<span class="string">&quot;广州&quot;</span>, <span class="string">&quot;杭州&quot;</span>), (<span class="string">&quot;广州&quot;</span>, <span class="string">&quot;重庆&quot;</span>)],</span><br><span class="line">        type_=ChartType.LINES,</span><br><span class="line">        effect_opts=opts.EffectOpts(</span><br><span class="line">            symbol=SymbolType.ARROW, symbol_size=<span class="number">6</span>, color=<span class="string">&quot;blue&quot;</span></span><br><span class="line">        ),</span><br><span class="line">        linestyle_opts=opts.LineStyleOpts(curve=<span class="number">0.2</span>),</span><br><span class="line">    )</span><br><span class="line">    .set_series_opts(label_opts=opts.LabelOpts(is_show=<span class="literal">False</span>))</span><br><span class="line">    .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">&quot;Geo-Lines-background&quot;</span>))</span><br><span class="line">    .render(<span class="string">&quot;geo_lines_background.html&quot;</span>)</span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-        
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe src=<span class="string">&quot;C:/Users/Administrator/Desktop/pyechart图/geo_lines_background.html&quot;</span> width=<span class="string">&quot;800&quot;</span> height=<span class="string">&quot;600&quot;</span>&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
 
-        
-
-        
-
-        
-        
-        
-        
-    </div>
-
-    
-        <a class="home-read-more" href="/2023/12/03/8%E4%B8%AA%E5%B8%B8%E7%94%A8%E7%9A%84python%E5%8A%9E%E5%85%AC%E5%AE%A4%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E5%B7%A7/">阅读全文&nbsp;<i class="icon fas fa-angle-right"></i></a>
-    
-</div>
 
                 </div>
-            </li>
-        
-            <li class="home-post-item">
 
                 
 
-                <div class="home-post-item-bottom border-box">
-                    
-                        <div class="post-sticky-box card">
-                            <i class="fas fa-thumbtack"></i><span class="sticky-name">&nbsp;置顶</span>
-                        </div>
-                    
-                    <h3 class="home-post-title border-box">
-                        <a href="/2023/12/03/pandas%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%8652%E4%B8%AA%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/">
-                            pandas数据分析处理52个常用技巧
-                        </a>
-                    </h3>
-
-                    <div class="home-post-content keep-markdown-body">
-                        
-                            python中的第3方工具包pandas功能强大, 日常工作中比如筛选、排序、计算、透视、vlookup、分类汇总等excel常用操作用pandas也能轻松实现;本文精心整理的pandas数据处理与分析的52个技巧, 100多个知识点, 掌握这些,处理数据不再是难事!
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
                         
                     </div>
-
-                    
-
-<div class="post-meta-info-container border-box home">
-    <div class="post-meta-info border-box">
-        
-            <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-post-history" data-updated="Sun Dec 03 2023 12:52:33 GMT+0800">2023-12-03 12:52:33</span>
-            </span>
-        
-
-        
-
-        
-
-        
-
-        
-        
-        
-        
-    </div>
-
-    
-        <a class="home-read-more" href="/2023/12/03/pandas%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%8652%E4%B8%AA%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/">阅读全文&nbsp;<i class="icon fas fa-angle-right"></i></a>
-    
-</div>
-
+                    <div>
+                        
+                    </div>
                 </div>
-            </li>
-        
-            <li class="home-post-item">
 
                 
 
-                <div class="home-post-item-bottom border-box">
-                    
-                    <h3 class="home-post-title border-box">
-                        <a href="/2023/12/03/pyechart%E7%94%9F%E6%88%90%E5%9C%B0%E5%9B%BE/">
-                            pyechart生成地图
-                        </a>
-                    </h3>
-
-                    <div class="home-post-content keep-markdown-body">
+                
+                    <div class="post-nav border-box">
                         
-                            代码
-123456789101112131415161718192021222324252627282930from pyecharts import options as optsfrom pyecharts.charts import Geofr...
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2023/12/03/%E7%94%A8python%E5%A6%82%E4%BD%95%E8%AF%BB%E5%8F%9610G%E7%9A%84%E8%B6%85%E5%A4%A7%E6%96%87%E4%BB%B6/"
+                                   title="用python如何读取10G的超大文件"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">用python如何读取10G的超大文件</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
                         
                     </div>
-
-                    
-
-<div class="post-meta-info-container border-box home">
-    <div class="post-meta-info border-box">
-        
-            <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-post-history" data-updated="Sun Dec 03 2023 14:10:30 GMT+0800">2023-12-03 14:10:30</span>
-            </span>
-        
-
-        
-
-        
-
-        
-
-        
-        
-        
-        
-    </div>
-
-    
-        <a class="home-read-more" href="/2023/12/03/pyechart%E7%94%9F%E6%88%90%E5%9C%B0%E5%9B%BE/">阅读全文&nbsp;<i class="icon fas fa-angle-right"></i></a>
-    
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-post-item">
-
                 
 
-                <div class="home-post-item-bottom border-box">
-                    
-                    <h3 class="home-post-title border-box">
-                        <a href="/2023/12/03/%E7%94%A8python%E5%A6%82%E4%BD%95%E8%AF%BB%E5%8F%9610G%E7%9A%84%E8%B6%85%E5%A4%A7%E6%96%87%E4%BB%B6/">
-                            用python如何读取10G的超大文件
-                        </a>
-                    </h3>
-
-                    <div class="home-post-content keep-markdown-body">
-                        
-                            学习或者工作当中经常会碰到处理大文件的时候, 如果你只有一台普通电脑该如何处理呢? 今天跟大家分享一个处理技巧, 就算现在没有碰到, 点右上角先收藏说不定以后会用到呢!
-思路硬件条件有限, 我们可以试试用pandas分块读取, 读取文件后一般有3种处...
-                        
-                    </div>
-
+                
                     
 
-<div class="post-meta-info-container border-box home">
-    <div class="post-meta-info border-box">
-        
-            <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-post-history" data-updated="Sun Dec 03 2023 13:13:10 GMT+0800">2023-12-03 13:13:10</span>
-            </span>
-        
 
-        
 
-        
 
-        
 
-        
-        
-        
-        
-    </div>
-
-    
-        <a class="home-read-more" href="/2023/12/03/%E7%94%A8python%E5%A6%82%E4%BD%95%E8%AF%BB%E5%8F%9610G%E7%9A%84%E8%B6%85%E5%A4%A7%E6%96%87%E4%BB%B6/">阅读全文&nbsp;<i class="icon fas fa-angle-right"></i></a>
-    
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-post-item">
 
                 
-
-                <div class="home-post-item-bottom border-box">
-                    
-                    <h3 class="home-post-title border-box">
-                        <a href="/2023/12/03/%E8%AF%BB%E5%8F%96%E9%80%9F%E5%BA%A6%E6%8F%90%E5%8D%87%E5%87%A0%E5%80%8D/">
-                            读取速度提升几倍
-                        </a>
-                    </h3>
-
-                    <div class="home-post-content keep-markdown-body">
-                        
-                            
-您好, 本博客将持续更新python数据分析技巧, 一次解决一个问题，欢迎关注订阅!
-
-本次介绍提升excel文件读取速度问题工作中我们会有一些大文件(excel, csv等),  作为基础数据经常会读取, 如何减少读取时间, 提升效率呢?
-今天用...
-                        
-                    </div>
-
-                    
-
-<div class="post-meta-info-container border-box home">
-    <div class="post-meta-info border-box">
-        
-            <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-post-history" data-updated="Sun Dec 03 2023 13:09:56 GMT+0800">2023-12-03 13:09:56</span>
-            </span>
-        
+            </div>
+        </div>
 
         
-
-        
-
-        
-
-        
-        
-        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
         
     </div>
-
-    
-        <a class="home-read-more" href="/2023/12/03/%E8%AF%BB%E5%8F%96%E9%80%9F%E5%BA%A6%E6%8F%90%E5%8D%87%E5%87%A0%E5%80%8D/">阅读全文&nbsp;<i class="icon fas fa-angle-right"></i></a>
-    
 </div>
 
-                </div>
-            </li>
-        
-            <li class="home-post-item">
-
-                
-
-                <div class="home-post-item-bottom border-box">
-                    
-                    <h3 class="home-post-title border-box">
-                        <a href="/2023/12/03/python%E8%AE%A1%E7%AE%97%E6%98%A8%E5%A4%A9%E5%8F%8A%E4%BB%A5%E6%98%A8%E5%A4%A9%E4%B8%BA%E8%B5%B7%E7%82%B9%E4%B8%8A%E6%9C%88%E6%9C%88%E6%9C%AB%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%97%A5%E6%9C%9F/">
-                            python计算昨天及以昨天为起点上月月末的两个日期
-                        </a>
-                    </h3>
-
-                    <div class="home-post-content keep-markdown-body">
-                        
-                            
-工作中经常对两个日期的数据进行比较，比如一张报表是用昨天的数据和上月月末的数据进行比较，用python如何获取两个日期呢？
-
-python时间数据基础1234567891011121314151617181920212223242526from d...
-                        
-                    </div>
-
-                    
-
-<div class="post-meta-info-container border-box home">
-    <div class="post-meta-info border-box">
-        
-            <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-post-history" data-updated="Sun Dec 03 2023 13:07:49 GMT+0800">2023-12-03 13:07:49</span>
-            </span>
-        
-
-        
-
-        
-
-        
-
-        
-        
-        
+            </div>
         
     </div>
-
-    
-        <a class="home-read-more" href="/2023/12/03/python%E8%AE%A1%E7%AE%97%E6%98%A8%E5%A4%A9%E5%8F%8A%E4%BB%A5%E6%98%A8%E5%A4%A9%E4%B8%BA%E8%B5%B7%E7%82%B9%E4%B8%8A%E6%9C%88%E6%9C%88%E6%9C%AB%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%97%A5%E6%9C%9F/">阅读全文&nbsp;<i class="icon fas fa-angle-right"></i></a>
-    
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-post-item">
-
-                
-
-                <div class="home-post-item-bottom border-box">
-                    
-                    <h3 class="home-post-title border-box">
-                        <a href="/2023/12/03/Python%E4%B8%AD%E7%9A%84%E6%97%A5%E6%9C%9F%E6%95%B0%E6%8D%AE/">
-                            Python中的日期数据
-                        </a>
-                    </h3>
-
-                    <div class="home-post-content keep-markdown-body">
-                        
-                            使用pandas中read_excel()方法读取excel文件，并将数据转换成日期格式。使用pandas中dt模块获取日期中的年、月、日等信息
-                        
-                    </div>
-
-                    
-
-<div class="post-meta-info-container border-box home">
-    <div class="post-meta-info border-box">
-        
-            <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-post-history" data-updated="Sun Dec 03 2023 12:52:37 GMT+0800">2023-12-03 12:52:37</span>
-            </span>
-        
-
-        
-
-        
-
-        
-
-        
-        
-        
-        
-    </div>
-
-    
-        <a class="home-read-more" href="/2023/12/03/Python%E4%B8%AD%E7%9A%84%E6%97%A5%E6%9C%9F%E6%95%B0%E6%8D%AE/">阅读全文&nbsp;<i class="icon fas fa-angle-right"></i></a>
-    
-</div>
-
-                </div>
-            </li>
-        
-    </ul>
-    
-
-
-
 </div>
 
 
@@ -606,10 +364,27 @@ python时间数据基础1234567891011121314151617181920212223242526from d...
 
     <!-- post tools -->
     
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
 
     <!-- side tools -->
     <div class="side-tools">
-        <div class="side-tools-container border-box side-tools-show-handle">
+        <div class="side-tools-container border-box ">
     <ul class="side-tools-list side-tools-show-handle border-box">
         <li class="tools-item tool-font-adjust-plus flex-center">
             <i class="fas fa-search-plus"></i>
@@ -632,6 +407,10 @@ python时间数据基础1234567891011121314151617181920212223242526from d...
     </ul>
 
     <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
         
 
         
@@ -689,8 +468,18 @@ python时间数据基础1234567891011121314151617181920212223242526from d...
 
     <!-- tablet toc -->
     
-</main>
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        
+    </div>
+</div>
 
+            </div>
+        </div>
+    
+</main>
 
 
 
@@ -722,6 +511,24 @@ python时间数据基础1234567891011121314151617181920212223242526from d...
 
 
 <div class="pjax">
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
     
 
     <!-- category-page -->
