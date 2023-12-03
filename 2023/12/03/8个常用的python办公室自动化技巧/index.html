@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="AI、Python、可视化">
+    <meta name="description" content="AI改变世界，你可以一直向前！">
+    <meta name="author" content="不凡">
+    
+    <title>
+        
+            8个常用的python办公室自动化技巧 |
+        
+        Yang的博客
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"chat-tu.com","root":"/","language":"zh-CN","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Yang的博客","author":"不凡","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"Archives":"/archives","Categories":"/categories","Links":"https://space.bilibili.com/13834960"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"行有余力，则以学文.","hitokoto":true},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"category":true,"tag":true,"announcement":null},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["练气","筑基","结丹","元婴","化神"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"jsdelivr"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":false,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","version":"4.0.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Yang的博客
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >首页</a>
+                    </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >归档</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >分类</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               target="_blank" rel="noopener" href="https://space.bilibili.com/13834960"
+                            >友链</a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            <li class="drawer-menu-item flex-center">
+                <a class=""
+                   href="/"
+                >首页</a>
+            </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"
+                    >归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"
+                    >分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       target="_blank" rel="noopener" href="https://space.bilibili.com/13834960"
+                    >友链</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        8个常用的python办公室自动化技巧
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">不凡</span>
+                                
+                                    <span class="author-badge">Lv1</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2023-12-03</span>
+                <span class="mobile">2023-12-03 12:37</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Sun Dec 03 2023 12:52:46 GMT+0800">2023-12-03</span>
+            </span>
+        
+
+        
+
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>2k 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>9 分钟</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body">
+                    
+
+                    <p>本文就给大家介绍几个我用到的办公室自动化技巧:</p>
+<h2 id="1-Word文档doc转docx"><a href="#1-Word文档doc转docx" class="headerlink" title="1 Word文档doc转docx"></a>1 Word文档doc转docx</h2><p>想用python-docx 读取word文件中的数据, 但是python-docx只支持docx格式, 所以研究了这两种格式的转换。</p>
+<p><strong>1.1 导入工具包</strong> </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> win32com <span class="keyword">import</span> client <span class="keyword">as</span> wc</span><br></pre></td></tr></table></figure>
+<p><strong>1.2 获取文件夹下面所有doc文件明细</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 路径</span></span><br><span class="line">path=<span class="string">&quot;C:/Users/yyz/Desktop/python办公技巧/data/doc转docx/&quot;</span>   <span class="comment"># 根据自己电脑文件修改</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义空list,存放文件绝对路径</span></span><br><span class="line">files = []</span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(path):</span><br><span class="line">    <span class="keyword">if</span> file.endswith(<span class="string">&quot;.doc&quot;</span>):</span><br><span class="line">        files.append(path+file)</span><br><span class="line">files</span><br></pre></td></tr></table></figure>
+
+<p><strong>1.3 转换文件</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 运行word程序</span></span><br><span class="line">word = wc.Dispatch(<span class="string">&quot;Word.Application&quot;</span>)</span><br><span class="line"><span class="comment"># for循环</span></span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> files:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        doc = word.Documents.Open(file)    <span class="comment">#打开word文件</span></span><br><span class="line">        doc.SaveAs(<span class="string">&quot;&#123;&#125;x&quot;</span>.<span class="built_in">format</span>(file), <span class="number">12</span>)   <span class="comment">#另存为后缀为&quot;.docx&quot;的文件，其中参数12指docx文件</span></span><br><span class="line">        doc.Close()  <span class="comment">#关闭原来word文件</span></span><br><span class="line">        <span class="built_in">print</span>(file +<span class="string">&#x27;:转换成功&#x27;</span>)</span><br><span class="line">        i +=<span class="number">1</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(file +<span class="string">&#x27;:转换[不成功]&#x27;</span>)   </span><br><span class="line">        files.append(file)  <span class="comment"># 若读取文件报错, 则将文件名称添加到files列表中重新读取</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;转换文件%i个&#x27;</span>%i)    </span><br><span class="line"><span class="comment"># 退出word    </span></span><br><span class="line">word.Quit()</span><br></pre></td></tr></table></figure>
+<h2 id="2-文字地址批量转经纬度"><a href="#2-文字地址批量转经纬度" class="headerlink" title="2 文字地址批量转经纬度"></a>2 文字地址批量转经纬度</h2><p>工作中地址转经纬度会用在做地图可视化或者计算距离方面。</p>
+<p><strong>2.1 导入工具包</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入工具包</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen, quote</span><br><span class="line"><span class="keyword">import</span> requests</span><br></pre></td></tr></table></figure>
+<p><strong>2.2 定义转换函数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getlnglat</span>(<span class="params">address</span>):</span><br><span class="line">    url = <span class="string">&#x27;http://api.map.baidu.com/geocoding/v3/&#x27;</span></span><br><span class="line">    output = <span class="string">&#x27;json&#x27;</span></span><br><span class="line">    ak = <span class="string">&quot;自己申请的api&quot;</span>   <span class="comment"># 百度地图API, 需要自己申请</span></span><br><span class="line">    address = quote(address) <span class="comment"># 由于本文地址变量为中文，为防止乱码，先用quote进行编码</span></span><br><span class="line">    uri = url + <span class="string">&#x27;?&#x27;</span> + <span class="string">&#x27;address=&#x27;</span> + address  + <span class="string">&#x27;&amp;output=&#x27;</span> + output + <span class="string">&#x27;&amp;ak=&#x27;</span> + ak  +<span class="string">&#x27;&amp;callback=showLocation%20&#x27;</span>+<span class="string">&#x27;//GET%E8%AF%B7%E6%B1%82&#x27;</span></span><br><span class="line">    res=requests.get(uri).text</span><br><span class="line">    temp = json.loads(res) <span class="comment"># 将字符串转化为json</span></span><br><span class="line">    lat = temp[<span class="string">&#x27;result&#x27;</span>][<span class="string">&#x27;location&#x27;</span>][<span class="string">&#x27;lat&#x27;</span>]</span><br><span class="line">    lng = temp[<span class="string">&#x27;result&#x27;</span>][<span class="string">&#x27;location&#x27;</span>][<span class="string">&#x27;lng&#x27;</span>]</span><br><span class="line">    <span class="keyword">return</span> lng, lat   <span class="comment"># 经度 longitude,纬度 latitude,</span></span><br></pre></td></tr></table></figure>
+<p><strong>2.3 地址转换</strong><br><strong>2.3.1 单个地址转换</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 单个地址转换</span></span><br><span class="line">getlnglat(<span class="string">&#x27;北京市朝阳区高碑店地区办事处高井村委会&#x27;</span>)</span><br><span class="line">(<span class="number">116.52784003604923</span>, <span class="number">39.91806508560947</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>2.3.2 批量地址转换</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">data = pd.read_excel(<span class="string">&#x27;C:/Users/yyz/Desktop/python办公技巧/data/地址信息.xlsx&#x27;</span>)</span><br><span class="line">data</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">data[<span class="string">&#x27;经度&#x27;</span>] = <span class="string">&#x27;&#x27;</span></span><br><span class="line">data[<span class="string">&#x27;纬度&#x27;</span>] = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(data.shape[<span class="number">0</span>]):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        data.iloc[i,<span class="number">2</span>] = getlnglat(data.iloc[i,<span class="number">1</span>])[<span class="number">0</span>] <span class="comment"># 经度 将第i行,第2列的地址(列索引为1)转换为经纬度,并将经度赋值给第i行,第3列(列索引为2)</span></span><br><span class="line">        data.iloc[i,<span class="number">3</span>] = getlnglat(data.iloc[i,<span class="number">1</span>])[<span class="number">1</span>] <span class="comment"># 纬度</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="comment">#print(i)</span></span><br><span class="line">data</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="3-经纬度计算距离"><a href="#3-经纬度计算距离" class="headerlink" title="3 经纬度计算距离"></a>3 经纬度计算距离</h2><p>安装工具包</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install geopy</span><br></pre></td></tr></table></figure>
+<p><strong>3.1 导入工具包</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> geopy.distance <span class="keyword">import</span> geodesic</span><br></pre></td></tr></table></figure>
+<p><strong>3.2 读取数据</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">data = pd.read_excel(<span class="string">&#x27;C:/Users/yyz/Desktop/python办公技巧/data/经纬度计算距离.xlsx&#x27;</span>)</span><br><span class="line">data</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.3 计算距离</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将经纬度赋值给变量,简化</span></span><br><span class="line">wd1 = data[<span class="string">&#x27;纬度1&#x27;</span>].tolist()</span><br><span class="line">jd1 = data[<span class="string">&#x27;经度1&#x27;</span>].tolist()</span><br><span class="line">wd2 = data[<span class="string">&#x27;纬度2&#x27;</span>].tolist()</span><br><span class="line">jd2 = data[<span class="string">&#x27;经度2&#x27;</span>].tolist()</span><br><span class="line"></span><br><span class="line">lis1 = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(data)):</span><br><span class="line">    j= geodesic((wd1[i],jd1[i]), (wd2[i],jd2[i])).km   <span class="comment"># 纬度 经度  纬度 经度</span></span><br><span class="line">    lis1.append(j)</span><br><span class="line">    <span class="comment">#print(i)</span></span><br><span class="line"></span><br><span class="line">data[<span class="string">&#x27;距离&#x27;</span>] = lis1</span><br><span class="line">data</span><br></pre></td></tr></table></figure>
+<h2 id="4-百度经纬度转高德经纬度"><a href="#4-百度经纬度转高德经纬度" class="headerlink" title="4 百度经纬度转高德经纬度"></a>4 百度经纬度转高德经纬度</h2><p>公司有2个系统,用的坐标系不一样, 有时候需要转换一下</p>
+<p><strong>4.1 工具包</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入工具包</span></span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br></pre></td></tr></table></figure>
+<p><strong>4.2 定义函数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义转换函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">bdToGaoDe</span>(<span class="params">lon,lat</span>):</span><br><span class="line">    PI = <span class="number">3.14159265358979324</span> * <span class="number">3000.0</span> / <span class="number">180.0</span></span><br><span class="line">    x = lon - <span class="number">0.0065</span></span><br><span class="line">    y = lat - <span class="number">0.006</span></span><br><span class="line">    z = math.sqrt(x * x + y * y) - <span class="number">0.00002</span> * math.sin(y * PI)</span><br><span class="line">    theta = math.atan2(y, x) - <span class="number">0.000003</span> * math.cos(x * PI)</span><br><span class="line">    lon = z * math.cos(theta)</span><br><span class="line">    lat = z * math.sin(theta)</span><br><span class="line">    <span class="keyword">return</span> lon,lat</span><br></pre></td></tr></table></figure>
+<p><strong>4.3 单个转换</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 单个转换</span></span><br><span class="line">bdToGaoDe(<span class="number">116.512885</span>, <span class="number">39.847469</span>)</span><br><span class="line">(<span class="number">116.50647396357492</span>, <span class="number">39.84120409781157</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>4.4 批量转换</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">data = pd.read_excel(<span class="string">&#x27;C:/Users/yyz/Desktop/python办公技巧/data/百度经纬度转高德.xlsx&#x27;</span>)</span><br><span class="line">data.head()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">wd = data[<span class="string">&#x27;纬度&#x27;</span>].tolist()</span><br><span class="line">jd = data[<span class="string">&#x27;经度&#x27;</span>].tolist()</span><br><span class="line"><span class="comment"># 定义一个空列表</span></span><br><span class="line">li1 = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(data)):</span><br><span class="line">    j  = bdToGaoDe(jd[i],wd[i])</span><br><span class="line">    li1.append(j)</span><br><span class="line">    </span><br><span class="line">li1</span><br><span class="line">data[<span class="string">&#x27;经度_re&#x27;</span>] = [i[<span class="number">0</span>] <span class="keyword">for</span> i <span class="keyword">in</span> li1]</span><br><span class="line">data[<span class="string">&#x27;纬度_re&#x27;</span>] = [i[<span class="number">1</span>] <span class="keyword">for</span> i <span class="keyword">in</span> li1]</span><br><span class="line">data.head()</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-Excel文件批量合并"><a href="#5-Excel文件批量合并" class="headerlink" title="5 Excel文件批量合并"></a>5 Excel文件批量合并</h2><p><strong>5.1 工具包</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入工具包</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> os</span><br></pre></td></tr></table></figure>
+<p><strong>5.2  获取文件列表</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置文件路径</span></span><br><span class="line">path = <span class="string">&#x27;C:/Users/yyz/Desktop/python办公技巧/data/数据合并/&#x27;</span></span><br><span class="line"><span class="comment"># 空列表, 用于存放文件路径</span></span><br><span class="line">files = []</span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(path):</span><br><span class="line">    <span class="keyword">if</span> file.endswith(<span class="string">&quot;.xlsx&quot;</span>):</span><br><span class="line">        files.append(path+file)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看列表</span></span><br><span class="line">files</span><br></pre></td></tr></table></figure>
+<p><strong>5.3 转换存储数据</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义一个空的dataframe</span></span><br><span class="line">data = pd.DataFrame()  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 遍历所有文件</span></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> files:</span><br><span class="line">    datai = pd.read_excel(file)</span><br><span class="line">    datai_len = <span class="built_in">len</span>(datai)</span><br><span class="line">    data = data.append(datai)   <span class="comment"># 添加到总的数据中</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;读取%i行数据,合并后文件%i列, 名称：%s&#x27;</span>%(datai_len,<span class="built_in">len</span>(data.columns),file.split(<span class="string">&#x27;/&#x27;</span>)[-<span class="number">1</span>]))     </span><br><span class="line">    <span class="comment"># 查看是否全部读取，格式是否出错</span></span><br><span class="line"><span class="comment"># 重置索引    </span></span><br><span class="line">data.reset_index(drop=<span class="literal">True</span>,inplace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-Word文件批量转pdf"><a href="#6-Word文件批量转pdf" class="headerlink" title="6 Word文件批量转pdf"></a>6 Word文件批量转pdf</h2><p>只能转docx文件,转doc文件会报错, 工具包安装</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install docx2pdf</span><br></pre></td></tr></table></figure>
+
+<p><strong>6.1 导入工具包</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装工具包:</span></span><br><span class="line"><span class="comment">#　导入工具包</span></span><br><span class="line"><span class="keyword">from</span> docx2pdf <span class="keyword">import</span> convert</span><br><span class="line"><span class="keyword">import</span> os</span><br></pre></td></tr></table></figure>
+<p><strong>6.2 单个转换</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 单个转换</span></span><br><span class="line">convert(<span class="string">&quot;c:/users/yyz/desktop/魔方公式.docx&quot;</span>, <span class="string">&quot;c:/users/yyz/desktop/excel笔记.pdf&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>6.3 批量转换</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 文件位置</span></span><br><span class="line">path = <span class="string">&#x27;C:/Users/yyz/Desktop/python办公技巧/data/word转pdf/&#x27;</span></span><br><span class="line"><span class="comment"># 定义空list,存放文件列表</span></span><br><span class="line">files = []</span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(path):</span><br><span class="line">    <span class="keyword">if</span> file.endswith(<span class="string">&quot;.docx&quot;</span>):</span><br><span class="line">        files.append(path+file)</span><br><span class="line">files</span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> files:</span><br><span class="line">   convert(file,file.split(<span class="string">&#x27;.&#x27;</span>)[<span class="number">0</span>]+<span class="string">&#x27;.pdf&#x27;</span>)</span><br><span class="line">   <span class="built_in">print</span>(file+<span class="string">&#x27;转换成功&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="7-批量读取word中表格数据"><a href="#7-批量读取word中表格数据" class="headerlink" title="7 批量读取word中表格数据"></a>7 批量读取word中表格数据</h2><p>工具包安装</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install python-docx</span><br></pre></td></tr></table></figure>
+
+<p><strong>7.1 导入工具包</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> docx</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 读取word文件</span></span><br><span class="line">doc = docx.Document(<span class="string">&#x27;C:/Users/yyz/Desktop/python办公技巧/data/word信息.docx&#x27;</span>)</span><br><span class="line"><span class="comment"># 获取文档中所有表格对象的列表</span></span><br><span class="line">biaoges = doc.tables </span><br></pre></td></tr></table></figure>
+
+<p><strong>7.2  不规范的表格</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cells = biaoges[<span class="number">1</span>]._cells</span><br><span class="line">cells_lis = [[cell.text <span class="keyword">for</span> cell <span class="keyword">in</span> cells]]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">datai = pd.DataFrame(cells_lis)</span><br><span class="line">datai = datai[[<span class="number">1</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">14</span>,<span class="number">16</span>,<span class="number">19</span>,<span class="number">21</span>]]</span><br><span class="line">datai.columns = [<span class="string">&#x27;姓名&#x27;</span>,<span class="string">&#x27;年龄&#x27;</span>,<span class="string">&#x27;籍贯&#x27;</span>,<span class="string">&#x27;住址&#x27;</span>,<span class="string">&#x27;工作单位&#x27;</span>,<span class="string">&#x27;电话&#x27;</span>,<span class="string">&#x27;是否党员&#x27;</span>,<span class="string">&#x27;出生日期&#x27;</span>]</span><br><span class="line">datai</span><br></pre></td></tr></table></figure>
+
+<p><strong>7.3 规范数据</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取第1个表格行丨</span></span><br><span class="line">rowi = <span class="built_in">len</span>(biaoges[<span class="number">0</span>].rows)</span><br><span class="line">rowi</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义空列表</span></span><br><span class="line">lis1 = []</span><br><span class="line"><span class="comment"># for循环获取第一个表的数据</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,rowi):  <span class="comment"># 从第2行开始循环</span></span><br><span class="line">    lis1.append([biaoges[<span class="number">0</span>].cell(i,<span class="number">0</span>).text,</span><br><span class="line">                 biaoges[<span class="number">0</span>].cell(i,<span class="number">1</span>).text,</span><br><span class="line">                 biaoges[<span class="number">0</span>].cell(i,<span class="number">2</span>).text,</span><br><span class="line">                 biaoges[<span class="number">0</span>].cell(i,<span class="number">3</span>).text,</span><br><span class="line">                 biaoges[<span class="number">0</span>].cell(i,<span class="number">4</span>).text])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个dataframe</span></span><br><span class="line">data1 = pd.DataFrame(lis1,columns=[<span class="string">&#x27;日期&#x27;</span>,<span class="string">&#x27;品类&#x27;</span>,<span class="string">&#x27;数量&#x27;</span>,<span class="string">&#x27;价格&#x27;</span>,<span class="string">&#x27;金额&#x27;</span>])</span><br><span class="line">data1</span><br></pre></td></tr></table></figure>
+
+<p><strong>7.4 批量读取</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.chdir(<span class="string">&#x27;C:/Users/yyz/Desktop/python办公技巧/data/word信息/&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">lis1=[]</span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(<span class="string">&#x27;.&#x27;</span>):</span><br><span class="line">    <span class="keyword">if</span> file.endswith(<span class="string">&#x27;.docx&#x27;</span>):</span><br><span class="line">        doc = docx.Document(<span class="string">&#x27;./&#x27;</span>+file)</span><br><span class="line">        biaoges = doc.tables</span><br><span class="line">        rowi = <span class="built_in">len</span>(biaoges[<span class="number">0</span>].rows)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,rowi):</span><br><span class="line">            lis1.append([biaoges[<span class="number">0</span>].cell(i,<span class="number">0</span>).text,</span><br><span class="line">                     biaoges[<span class="number">0</span>].cell(i,<span class="number">1</span>).text,</span><br><span class="line">                     biaoges[<span class="number">0</span>].cell(i,<span class="number">2</span>).text,</span><br><span class="line">                     biaoges[<span class="number">0</span>].cell(i,<span class="number">3</span>).text,</span><br><span class="line">                     biaoges[<span class="number">0</span>].cell(i,<span class="number">4</span>).text])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建dataframe            </span></span><br><span class="line">data1 = pd.DataFrame(lis1,columns=[<span class="string">&#x27;日期&#x27;</span>,<span class="string">&#x27;品类&#x27;</span>,<span class="string">&#x27;数量&#x27;</span>,<span class="string">&#x27;价格&#x27;</span>,<span class="string">&#x27;金额&#x27;</span>])</span><br><span class="line">data1</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-用outlook批量发邮件"><a href="#8-用outlook批量发邮件" class="headerlink" title="8 用outlook批量发邮件"></a>8 用outlook批量发邮件</h2><p><strong>8.1 导入工具包</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> win32com.client <span class="keyword">as</span> win32</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br></pre></td></tr></table></figure>
+<p><strong>8.2 读取数据</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">data1 = pd.read_excel(<span class="string">&#x27;C:/Users/yyz/Desktop/python批量发送邮件.xlsx&#x27;</span>,sheet_name=<span class="string">&#x27;发送邮件&#x27;</span>)</span><br><span class="line">data1.fillna(<span class="string">&#x27;&#x27;</span>,inplace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>8.3 发送邮件</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 运行outlook</span></span><br><span class="line">outlook = win32.Dispatch(<span class="string">&quot;outlook.Application&quot;</span>)   </span><br><span class="line"><span class="comment"># for循环发送文件</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(data1.shape[<span class="number">0</span>]):   </span><br><span class="line">    mail = outlook.CreateItem(<span class="number">0</span>)   <span class="comment"># 创建一个邮件对象  win32.constants.olMailItem</span></span><br><span class="line">    mail.To = data1.iloc[i,<span class="number">0</span>]      <span class="comment">#收件人</span></span><br><span class="line">    mail.CC = data1.iloc[i,<span class="number">1</span>]      <span class="comment">#抄送人</span></span><br><span class="line">    mail.Subject = data1.iloc[i,<span class="number">2</span>]    <span class="comment">#邮件主题</span></span><br><span class="line">    mail.HTMLBody = data1.iloc[i,<span class="number">3</span>]           <span class="comment"># 邮件正文 html格式</span></span><br><span class="line">   <span class="comment"># mail.Body = data1.iloc[i,3]              # 邮件正文</span></span><br><span class="line">    mail.Attachments.Add(data1.iloc[i,<span class="number">4</span>])     <span class="comment"># 附件</span></span><br><span class="line">    mail.Send() <span class="comment">#发送</span></span><br><span class="line">    i +=<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;发送邮件%i份&#x27;</span>%i)</span><br></pre></td></tr></table></figure>
+<p>python办公自动化的技巧还有很多, python好掌握, 能帮助我们提升工作效率, 这也是很多非编程人员学习python的原因之一.</p>
+
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2023/12/03/pandas%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%8652%E4%B8%AA%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/"
+                                   title="pandas数据分析处理52个常用技巧"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">pandas数据分析处理52个常用技巧</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Word%E6%96%87%E6%A1%A3doc%E8%BD%ACdocx"><span class="nav-text">1 Word文档doc转docx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%96%87%E5%AD%97%E5%9C%B0%E5%9D%80%E6%89%B9%E9%87%8F%E8%BD%AC%E7%BB%8F%E7%BA%AC%E5%BA%A6"><span class="nav-text">2 文字地址批量转经纬度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%BB%8F%E7%BA%AC%E5%BA%A6%E8%AE%A1%E7%AE%97%E8%B7%9D%E7%A6%BB"><span class="nav-text">3 经纬度计算距离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E7%99%BE%E5%BA%A6%E7%BB%8F%E7%BA%AC%E5%BA%A6%E8%BD%AC%E9%AB%98%E5%BE%B7%E7%BB%8F%E7%BA%AC%E5%BA%A6"><span class="nav-text">4 百度经纬度转高德经纬度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Excel%E6%96%87%E4%BB%B6%E6%89%B9%E9%87%8F%E5%90%88%E5%B9%B6"><span class="nav-text">5 Excel文件批量合并</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Word%E6%96%87%E4%BB%B6%E6%89%B9%E9%87%8F%E8%BD%ACpdf"><span class="nav-text">6 Word文件批量转pdf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E6%89%B9%E9%87%8F%E8%AF%BB%E5%8F%96word%E4%B8%AD%E8%A1%A8%E6%A0%BC%E6%95%B0%E6%8D%AE"><span class="nav-text">7 批量读取word中表格数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E7%94%A8outlook%E6%89%B9%E9%87%8F%E5%8F%91%E9%82%AE%E4%BB%B6"><span class="nav-text">8 用outlook批量发邮件</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2023
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">不凡</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+                <span class="count-box border-box uv">
+                    <span class="item-type border-box">访客数</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-box border-box pv">
+                    <span class="item-type border-box">访问量</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Word%E6%96%87%E6%A1%A3doc%E8%BD%ACdocx"><span class="nav-text">1 Word文档doc转docx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%96%87%E5%AD%97%E5%9C%B0%E5%9D%80%E6%89%B9%E9%87%8F%E8%BD%AC%E7%BB%8F%E7%BA%AC%E5%BA%A6"><span class="nav-text">2 文字地址批量转经纬度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%BB%8F%E7%BA%AC%E5%BA%A6%E8%AE%A1%E7%AE%97%E8%B7%9D%E7%A6%BB"><span class="nav-text">3 经纬度计算距离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E7%99%BE%E5%BA%A6%E7%BB%8F%E7%BA%AC%E5%BA%A6%E8%BD%AC%E9%AB%98%E5%BE%B7%E7%BB%8F%E7%BA%AC%E5%BA%A6"><span class="nav-text">4 百度经纬度转高德经纬度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Excel%E6%96%87%E4%BB%B6%E6%89%B9%E9%87%8F%E5%90%88%E5%B9%B6"><span class="nav-text">5 Excel文件批量合并</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Word%E6%96%87%E4%BB%B6%E6%89%B9%E9%87%8F%E8%BD%ACpdf"><span class="nav-text">6 Word文件批量转pdf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E6%89%B9%E9%87%8F%E8%AF%BB%E5%8F%96word%E4%B8%AD%E8%A1%A8%E6%A0%BC%E6%95%B0%E6%8D%AE"><span class="nav-text">7 批量读取word中表格数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E7%94%A8outlook%E6%89%B9%E9%87%8F%E5%8F%91%E9%82%AE%E4%BB%B6"><span class="nav-text">8 用outlook批量发邮件</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local-search -->
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+<!-- lazyload -->
+
+
+<div class="pjax">
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+
+    <!-- photos-page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>
