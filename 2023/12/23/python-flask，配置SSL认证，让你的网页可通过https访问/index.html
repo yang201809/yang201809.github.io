@@ -9,7 +9,7 @@
     
     <title>
         
-            Hexo+Github博客搭建 |
+            python+flask，配置SSL认证，让你的网页可通过https访问 |
         
         Yang的博客
     </title>
@@ -172,7 +172,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        Hexo+Github博客搭建
+                        python+flask，配置SSL认证，让你的网页可通过https访问
                     </div>
                 
 
@@ -200,29 +200,45 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
-                <span class="pc">2023-12-03</span>
-                <span class="mobile">2023-12-03 15:49</span>
+                <span class="pc">2023-12-23</span>
+                <span class="mobile">2023-12-23 16:29</span>
             </span>
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Sun Dec 03 2023 17:30:11 GMT+0800">2023-12-03</span>
+                <span class="pc" data-updated="Sat Dec 23 2023 16:35:25 GMT+0800">2023-12-23</span>
             </span>
         
 
         
 
+        
+            <span class="post-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/SSL%E8%AE%A4%E8%AF%81/">SSL认证</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/python/">python</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/flask/">flask</a></li>
+                        
+                    
+                </ul>
+            </span>
         
 
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.1k 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>513 字</span>
             </span>
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>3 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>1 分钟</span>
             </span>
         
         
@@ -243,23 +259,17 @@
                 <div class="post-content keep-markdown-body">
                     
 
-                    <p>对于希望建立个人博客的小白，Hexo+Github的组合是一个理想的选择，既不需要深厚的IT背景，又能满足大部分人的需求。</p>
-<p>搭建过程大致可以分解为以下步骤：域名注册 → 云服务器租赁 → Github账号注册 → 软件安装 → 与Github仓库的绑定 → 域名的绑定 → 选择博客主题 → 撰写博客。撰写博客时，选择一款适合的Markdown文件编辑软件是非常重要的，本文也将就此给出一些建议。</p>
-<h1 id="注册一个域名"><a href="#注册一个域名" class="headerlink" title="注册一个域名"></a>注册一个域名</h1><p>拥有一个易于记忆和访问的域名对于博客的推广和访问量的提升有很大的帮助。你可以在阿里云或者华为云上注册一个域名，年费用一般不会超过100元。完成注册后，还需要进行ICP备案，可以在阿里云上查找相关的操作教程，提交申请后，审核过程大约需要半个月的时间。</p>
-<h1 id="租云服务器"><a href="#租云服务器" class="headerlink" title="租云服务器"></a>租云服务器</h1><p>虽然用自己的电脑也可以搭建博客，但是为了更好的稳定性和访问速度，我还是选择了租用云服务器来专门存放博客相关的内容。</p>
-<h1 id="注册Github账号"><a href="#注册Github账号" class="headerlink" title="注册Github账号"></a>注册Github账号</h1><p><a class="link"   target="_blank" rel="noopener" href="https://github.com/" >GitHub<i class="fas fa-external-link-alt"></i></a>是一个面向开源及私有软件项目的托管平台,是全球最大的代码托管平台.</p>
-<h1 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h1><p>关于软件的安装，网络上有很多详细的教程可以参考。我是参照这一篇文章进行操作的：<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_58608526/article/details/124652412" >https://blog.csdn.net/qq_58608526/article/details/124652412<i class="fas fa-external-link-alt"></i></a><br>，这个过程需要安装多个软件，并且需要执行很多命令语句，所以需要非常细心。如果在操作过程中遇到返回结果和教程不一致的情况，一定要仔细检查后再进行下一步操作。</p>
-<p>我在操作过程中在第六步“将hexo部署到GitHub”时遇到了问题，一直显示404错误。我花了大半天的时间进行排查，最后发现问题出在配置文件的最后一行：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">https://github.com/gaoziman/gaoziman.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-<p>原来，branch后面应该是main而不是master。在Github的仓库设置中也需要选择main。</p>
-<h1 id="与Github仓库绑定-→-绑定域名"><a href="#与Github仓库绑定-→-绑定域名" class="headerlink" title="与Github仓库绑定 → 绑定域名"></a>与Github仓库绑定 → 绑定域名</h1><p>这一步按照上面链接中操作即可。</p>
-<h1 id="选择主题"><a href="#选择主题" class="headerlink" title="选择主题"></a>选择主题</h1><p>当你能正常访问你的域名时，先不要急着开始写博客，给你的博客选择一个合适的主题风格是很重要的。你可以上HEXO官网，上面有很多主题风格供你选择。如果你不确定应该选择哪个，可以搜索一下热门主题，每个主题都有详细的安装和设置手册。我选择的是keep主题。在设置过程中，你可能需要多次修改 <strong>_config.yml</strong> 文件的内容，这个文件在你的博客根目录和你安装的主题下面都有，注意区分。设置过程中，你可能会经常用到以下这几个命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo s</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>设置好风格后，接下来就是写博客。</p>
-<h1 id="撰写博客"><a href="#撰写博客" class="headerlink" title="撰写博客"></a>撰写博客</h1><p>由于博客通常采用的是Markdown格式，因此选择一款适合自己的Markdown编辑器就显得尤为重要。在试用了多款软件后，我最终选择了VScode。这款软件不仅允许我在写作过程中实时预览效果，更重要的是，它是完全免费的。</p>
-<h2 id="解决图片上传问题"><a href="#解决图片上传问题" class="headerlink" title="解决图片上传问题"></a>解决图片上传问题</h2><p>在撰写博客的过程中，经常需要上传各种各样的图片。然而，如果将所有图片都保存在本地文件夹中，不仅会占用大量空间，而且在进行Markdown编辑时也会变得非常不方便。为了解决这个问题，决定寻找一个可以托管图片的网站。经过一番搜索，发现了一个免费的图片托管网站：<a class="link"   target="_blank" rel="noopener" href="https://postimages.org./" >https://postimages.org。<i class="fas fa-external-link-alt"></i></a><br>不过，我还没有完全测试过它的效果。</p>
-<h2 id="嵌入HTML文件问题"><a href="#嵌入HTML文件问题" class="headerlink" title="嵌入HTML文件问题"></a>嵌入HTML文件问题</h2><p>我希望能在博客中嵌入一些由pyechart生成的动态图表，这些图表是以HTML格式存在的。为了实现这一目标，可以使用iframe来嵌入这些HTML文件。经过一番尝试，我成功地实现了这一功能。现在，我可以在博客中展示各种动态图表了，这无疑大大增强了博客的视觉效果和互动性。</p>
+                    <p>为了实现一个简单的功能，即将您用Python可视化库生成的图表展示在一个静态HTML格式的页面上，并通过HTTPS网页访问，您需要完成以下准备工作：</p>
+<ol>
+<li>准备一台云服务器，这将是您的图表页面的托管平台。您可以根据自己的需求和预算选择合适的服务器。</li>
+<li>申请一个域名，并确保它符合您的品牌和易于记忆。然后，根据中国的相关规定，对域名进行ICP备案，以便在中国境内提供服务。</li>
+<li>获取SSL认证证书。虽然证书本身可以免费申请，获取证书后，您需要将其下载到您的服务器上。</li>
+<li>将域名与服务器绑定，确保当用户输入您的域名时，能够正确地解析到您的服务器。</li>
+<li>开通服务器上的必要端口，以便您的网站能够通过SSL加密提供服务。</li>
+<li>在服务器上安装Python环境，并确保安装了所有必要的依赖库，包括Flask和其他可视化库。<br>在完成上述准备工作后，您可以使用以下Python代码来运行您的Flask应用程序，并通过HTTPS提供服务：</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, send_from_directory</span><br><span class="line">app = Flask(__name__, static_folder=<span class="string">&quot;static&quot;</span>)</span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;hello，world！&#x27;</span></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/qxt&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">qxt</span>():</span><br><span class="line">    <span class="keyword">return</span> send_from_directory(app.static_folder, <span class="string">&#x27;qxt.html&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    app.run(host=<span class="string">&#x27;0.0.0.0&#x27;</span>, port=<span class="number">5000</span>, ssl_context=(<span class="string">&#x27;./server/server.pem&#x27;</span>, <span class="string">&#x27;./server/server.key&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<p>确保在运行代码之前，您已经正确配置了SSL证书的路径，并且证书文件是可用的。一旦您启动了Flask应用程序，并等待HTTPS连接。用户可以通过输入 <code>https://您的域名</code> 来访问您的网站，并查看图表。<br>请注意，为了确保最佳的用户体验和安全性，您应该定期更新您的SSL证书，并确保您的服务器和应用程序保持最新的安全补丁。</p>
 
                 </div>
 
@@ -267,6 +277,22 @@
 
                 <div class="post-bottom-tags-and-share border-box">
                     <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/SSL%E8%AE%A4%E8%AF%81/">SSL认证</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/python/">python</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/flask/">flask</a>
+                                    </li>
+                                
+                            </ul>
                         
                     </div>
                     <div>
@@ -282,14 +308,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2023/12/23/python-flask%EF%BC%8C%E9%85%8D%E7%BD%AESSL%E8%AE%A4%E8%AF%81%EF%BC%8C%E8%AE%A9%E4%BD%A0%E7%9A%84%E7%BD%91%E9%A1%B5%E5%8F%AF%E9%80%9A%E8%BF%87https%E8%AE%BF%E9%97%AE/"
-                                   title="python+flask，配置SSL认证，让你的网页可通过https访问"
+                                   href="/2023/12/23/%E5%A6%82%E4%BD%95%E5%B0%86%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%BC%A0%E5%88%B0%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/"
+                                   title="如何将本地文件传到阿里云服务器"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">python+flask，配置SSL认证，让你的网页可通过https访问</span>
+                                        <span class="post-nav-title-item text-ellipsis">如何将本地文件传到阿里云服务器</span>
                                         <span class="post-nav-item">上一篇</span>
                                     </span>
                                 </a>
@@ -299,11 +325,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2023/12/03/pyechart%E7%94%9F%E6%88%90%E5%9C%B0%E5%9B%BE/"
-                                   title="pyechart生成地图"
+                                   href="/2023/12/03/Hexo-Github%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"
+                                   title="Hexo+Github博客搭建"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">pyechart生成地图</span>
+                                        <span class="post-nav-title-item text-ellipsis">Hexo+Github博客搭建</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -331,7 +357,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C%E4%B8%80%E4%B8%AA%E5%9F%9F%E5%90%8D"><span class="nav-text">注册一个域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%9F%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-text">租云服务器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E5%86%8CGithub%E8%B4%A6%E5%8F%B7"><span class="nav-text">注册Github账号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="nav-text">软件安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8EGithub%E4%BB%93%E5%BA%93%E7%BB%91%E5%AE%9A-%E2%86%92-%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D"><span class="nav-text">与Github仓库绑定 → 绑定域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E4%B8%BB%E9%A2%98"><span class="nav-text">选择主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%92%B0%E5%86%99%E5%8D%9A%E5%AE%A2"><span class="nav-text">撰写博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98"><span class="nav-text">解决图片上传问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B5%8C%E5%85%A5HTML%E6%96%87%E4%BB%B6%E9%97%AE%E9%A2%98"><span class="nav-text">嵌入HTML文件问题</span></a></li></ol></li></ol>
+        
     </div>
 </div>
 
@@ -500,7 +526,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C%E4%B8%80%E4%B8%AA%E5%9F%9F%E5%90%8D"><span class="nav-text">注册一个域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%9F%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-text">租云服务器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E5%86%8CGithub%E8%B4%A6%E5%8F%B7"><span class="nav-text">注册Github账号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="nav-text">软件安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8EGithub%E4%BB%93%E5%BA%93%E7%BB%91%E5%AE%9A-%E2%86%92-%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D"><span class="nav-text">与Github仓库绑定 → 绑定域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E4%B8%BB%E9%A2%98"><span class="nav-text">选择主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%92%B0%E5%86%99%E5%8D%9A%E5%AE%A2"><span class="nav-text">撰写博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98"><span class="nav-text">解决图片上传问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B5%8C%E5%85%A5HTML%E6%96%87%E4%BB%B6%E9%97%AE%E9%A2%98"><span class="nav-text">嵌入HTML文件问题</span></a></li></ol></li></ol>
+        
     </div>
 </div>
 
